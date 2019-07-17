@@ -91,3 +91,5 @@ if (process.argv.length > 2) {
   } else if (cmd === 'ls') {
   }
 }
+
+module.exports = start
