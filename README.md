@@ -23,7 +23,7 @@ Eventchain-sqlite will create an `eventchain/chain.sqlite` file containing the s
 
 Eventchain receives [TXO](https://github.com/interplanaria/txo) transaction objects from Planaria. A TXO object contains information about the transaction, the block, the inputs and outputs.
 
-Eventchain-sqlite creates the database `eventchain/sqlite` with the following tables:
+Eventchain-sqlite creates the database `eventchain/chain.sqlite` with the following tables:
 
 ```
 in
