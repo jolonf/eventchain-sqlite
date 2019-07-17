@@ -7,7 +7,9 @@ an sqlite database.
 
 # Install
 
-> npm install -g eventchain-sqlite
+```
+npm install -g eventchain-sqlite
+```
 
 # Usage
 
@@ -15,7 +17,9 @@ See [Eventchain](https://github.com/interplanaria/eventchain) for details on how
 
 Run eventchain-sqlite:
 
-> echain-sqlite start
+```
+echain-sqlite start
+```
 
 Eventchain-sqlite will create an `eventchain/chain.sqlite` file containing the sqlite database.
 
@@ -58,11 +62,11 @@ The following `event.json` config file will generate the columns below:
 Columns created:
 
 ```sql
-in.e.a VARCHAR
-out.s2 VARCHAR
-out.s3 VARCHAR
-out.s4 VARCHAR
-out.s8 VARCHAR
+[in.e.a] VARCHAR
+[out.s2] VARCHAR
+[out.s3] VARCHAR
+[out.s4] VARCHAR
+[out.s8] VARCHAR
 ```
 
 You can then create queries such as: 
