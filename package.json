@@ -1,10 +1,11 @@
 {
   "name": "echain-sqlite",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "author": "Jolon",
   "license": "Open BSV",
+  "repository": "github:jolonf/eventchain-sqlite",
   "bin": {
     "echain-sqlite": "./index.js"
   },
