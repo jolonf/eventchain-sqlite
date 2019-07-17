@@ -3,6 +3,7 @@ const glob = require('glob')
 const { planaria } = require("neonplanaria")
 const fs = require('fs');
 const path = require('path');
+const sqliteBridge = require('./sqlite-bridge')
 const chaindir = process.cwd() + "/eventchain"
 const log = function(msg) {
   return new Promise(function(resolve, reject) {
@@ -63,22 +64,19 @@ const start = function() {
       filter: config,
       onmempool: async function(e) {
         await log("ONMEMPOOL " + Date.now() + " " + e.tx.tx.h + " " + JSON.stringify(e.tx) + "\n")
+        await sqliteBridge.store('ONMEMPOOL', [e.tx])
       },
       onblock: async function(e) {
         if (e.tx.length > 0) {
           await log("ONBLOCK " + Date.now() + " " + e.tx[0].blk.h + " " + JSON.stringify(e.tx) + "\n")
+          await sqliteBridge.store('ONBLOCK', e.tx)
         }
       },
-      onstart: function(e) {
-        return new Promise(function(resolve, reject) {
-          if (fs.existsSync(chaindir)) {
-            resolve()
-          } else {
-            fs.mkdir(chaindir, function(err) {
-              resolve()
-            })
-          }
-        })
+      onstart: async function(e) {
+        if (!fs.existsSync(chaindir)) {
+          fs.mkdirSync(chaindir)
+        }
+        return await sqliteBridge.open(path.join(chaindir, 'chain.sqlite'), config.q)
       },
     })
   })

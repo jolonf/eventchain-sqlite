@@ -1,15 +1,16 @@
 {
-  "name": "echain",
-  "version": "0.0.12",
+  "name": "echain-sqlite",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "author": "unwriter@protonmail.com",
+  "author": "Jolon",
   "license": "Open BSV",
   "bin": {
-    "echain": "./index.js"
+    "echain-sqlite": "./index.js"
   },
   "dependencies": {
     "glob": "^7.1.4",
-    "neonplanaria": "0.0.22"
+    "neonplanaria": "0.0.22",
+    "sqlite": "^3.0.3"
   }
 }
