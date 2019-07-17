@@ -8,7 +8,7 @@ an sqlite database.
 # Install
 
 ```
-npm install -g eventchain-sqlite
+npm install -g echain-sqlite
 ```
 
 # Usage
@@ -72,7 +72,7 @@ Columns created:
 You can then create queries such as: 
 
 ```sql
-SELECT * from [out] WHERE [out.s4] = 'My metanet node';
+SELECT * FROM [out] WHERE [out.s4] = 'My metanet node';
 ```
 
 The square brackets help with the unconventional column and table naming.
